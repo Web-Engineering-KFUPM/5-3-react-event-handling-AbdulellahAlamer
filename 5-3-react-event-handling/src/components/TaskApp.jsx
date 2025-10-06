@@ -15,7 +15,7 @@ export default function TaskApp() {
   };
 
   const handleClearAll = () => {
-    // setTasks([]);
+    setTasks([]);
   };
 
   return (
