@@ -4,10 +4,18 @@ import TaskItem from "./TaskItem";
 export default function TaskList({ tasks, onDelete }) {
   return (
     <ul className="list">
-      {/* Task 2 – Display Placeholder if No Tasks Yet */}
-
-      {/* Task 2 & 3 – Map tasks to TaskItem */}
-      
+      {tasks.length === 0 ? (
+        <li className="list__placeholder">No tasks yet. Add one above.</li>
+      ) : (
+        tasks.map((task) => (
+          <TaskItem
+            key={task.id}
+            id={task.id}
+            text={task.text}
+            // onDelete={onDelete}
+          />
+        ))
+      )}
     </ul>
   );
 }
